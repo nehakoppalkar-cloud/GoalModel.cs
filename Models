@@ -1,19 +1,14 @@
-using MongoDB.Bson;
-using MongoDB.Bson.Serialization.Attributes;
-
-namespace rSERVER.Models
+public class Goal
 {
-    public class Goal
-    {
-        [BsonId]
-        [BsonRepresentation(BsonType.ObjectId)]
-        public string? Id { get; set; }
-
-        public string? Title { get; set; }
-
-        public string? Description { get; set; }
-
-        // This is the new field required for Step 7
-        public string? Icon { get; set; } 
-    }
+    [BsonId]
+    [BsonRepresentation(BsonType.ObjectId)]
+    public string? Id { get; set; }
+    public string? Name { get; set; }
+    public double TargetAmount { get; set; }
+    public DateTime TargetDate { get; set; }
+    public double Balance { get; set; }
+    public List<string>? TransactionIds { get; set; }
+    public List<string>? TagIds { get; set; }
+    public string? Icon { get; set; } // This is what you added earlier!
+    public string? UserId { get; set; }
 }
