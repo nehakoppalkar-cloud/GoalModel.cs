@@ -1,0 +1,19 @@
+using MongoDB.Bson;
+using MongoDB.Bson.Serialization.Attributes;
+
+namespace rSERVER.Models
+{
+    public class Goal
+    {
+        [BsonId]
+        [BsonRepresentation(BsonType.ObjectId)]
+        public string? Id { get; set; }
+
+        public string? Title { get; set; }
+
+        public string? Description { get; set; }
+
+        // This is the new field required for Step 7
+        public string? Icon { get; set; } 
+    }
+}
